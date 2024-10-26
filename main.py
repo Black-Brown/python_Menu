@@ -133,9 +133,60 @@ def ejecicio_cuenta():
                 print("el monto es inválido para realizar la transferencia.")
 
         def mostrar(self):
-            print(f"el monto")     
+            print(f"saldo actual: {self.saldo}")   
 
+    cuenta1 = Cuenta(100)
+    cuenta2 = Cuenta(50) 
 
+    while True:
+        print(
+            "\n--- Menu de Cuenta ---"
+            "\n1. Ingresar Dinero"
+            "\n2. Reintegro de Dinero"
+            "\n3. Transferencias Bancarias"
+            "\n4. Mostrar Saldo"
+            "\n5. Salir"
+        )
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            try:
+                monto = float(input("Digite la cantidad a ingresar: "))
+                print("")
+                cuenta1.ingresar(monto)
+                input("\nPresiona Enter para volver al menu de cuenta...")
+            except ValueError:
+                print("Ingrese un número válido.")
+        
+        elif opcion == "2":
+            try:
+                monto = float(input("Digite la cantidad a retirar: "))
+                print("")
+                cuenta1.reintegro(monto)
+                input("\nPresiona Enter para volver al menu de cuenta...")
+            except ValueError:
+                print("Ingrese un número válido.")
+
+        elif opcion == "3":
+            try:
+                monto = float(input("Ingrese la cantidad a transferir: "))
+                print("")
+                cuenta1.transferencias(cuenta2, monto)
+                input("\nPresiona Enter para volver al menu de cuenta...")
+            except ValueError:
+                print("Ingrese un número válido.")
+        
+        elif opcion == "4":
+            print("")
+            cuenta1.mostrar()
+            input("\nPresiona Enter para volver al menu de cuenta...")
+
+        elif opcion == "5":
+            print("Saliendo del menú de cuenta.")
+            break
+
+        else:
+            print("Digite un número válido.")
 
 def main():
     while True:
@@ -143,6 +194,11 @@ def main():
         if choice == "1":
             print("")
             ejercicio_persona()
+            input("\nPresiona Enter para volver al menú...")
+
+        elif choice == "2":
+            print("")
+            ejecicio_cuenta()
             input("\nPresiona Enter para volver al menú...")
 
         elif choice == "21":
