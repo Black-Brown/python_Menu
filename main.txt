@@ -17,6 +17,31 @@ Mínimo 7 personas diferentes con acciones diferentes.
 transferencia. La clase contendrá un constructor por defecto, un 
 constructor con parámetros y los métodos mostrar y ingresar.
 
+class Cuenta:
+        def __init__(self, saldo):
+            self.saldo = saldo
+                
+        def ingresar(self, monto):
+            if monto > 0:
+                self.saldo += monto
+                print(f"ingreso realizado. Nuevo saldo es: {self.saldo}")
+            else:
+                print(f"el monto debe ser positivo para realizar el ingreso")
+        
+        def reintegro(self, monto):
+            if monto > 0 and monto <= self.saldo:
+                self.saldo -= monto
+                print(f"reintegro realizado. Nuevo saldo es: {self.saldo}")
+            else:
+                print(f"el monto es invalido para realizar el reintegro")
+        
+        def transferecias(self, otra_cuenta, monto):
+            if monto > 0 and monto <= self.saldo:
+                self.saldo -= monto
+
+        def mostrar(self):
+            return self.mostrar    
+
 3. Crea una clase Fracción con métodos para sumar, restar, multiplicar y 
 dividir fracciones.
 
@@ -40,6 +65,13 @@ interés. Tendrá un método para obtener el importe del interés
 (cantidad*interés/100) y otro método para mostrar la información, datos 
 del titular plazo, interés y total de interés. Crear al menos un objeto de 
 cada subclase." has esto ejercicios.
+
+
+
+
+
+
+
 
 CICLO WHILE
 
