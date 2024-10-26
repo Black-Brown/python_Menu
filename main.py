@@ -155,3 +155,91 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def numalcuadradro (num):
+    resultado = print(input(num ** 2)) 
+    return resultado 
+
+def numproducto (num1, num2):
+    resultado = input(f"ingrese un numero:  {num1 * num2} ")
+    return resultado
+
+def contar_vocales(cadena):
+    vocales = "aeiouAEIOU"
+    contador = 0
+    for letra in cadena:
+        if letra in vocales:
+            contador += 1
+    return contador
+
+for i in range(3):
+    cadena = input(f"Ingrese la cadena {i+1}: ")
+    cantidad_vocales = contar_vocales(cadena)
+    print(f"La cantidad de vocales en '{cadena}' es: {cantidad_vocales}")
+
+def contar_vocales(cadena):
+    vocales = "aeiouAEIOU"
+    contador = 0
+    for letra in cadena:
+        if letra in vocales:
+            contador += 1
+    return contador
+
+for i in range(3):
+    cadena = input(f"Ingrese la cadena {i+1}: ")
+    cantidad_vocales = contar_vocales(cadena)
+    print(f"La cantidad de vocales en '{cadena}' es: {cantidad_vocales}")
+    
+    
+#Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
+#una con valores negativos y otra con los valores positivos e imprimir ambas listas.
+
+def negativos_positivos(valores):
+    negativos = []
+    positivos = []
+    
+    for valor in valores:
+        if valor < 0:
+            negativos.append(valor)
+        elif valor > 0:
+            positivos.append(valor)
+    
+    return negativos, positivos
+
+valores = [-3, 7, 0, 2, -1, 5, -4]  
+
+# Separar y obtener las listas
+negativos, positivos = negativos_positivos(valores)
+
+# Imprimir resultados
+print("Lista de valores negativos:", negativos)
+print("Lista de valores positivos:", positivos)
+
+#La segunda que solicite la carga
+#de dos valores y muestre el producto de los mismos.
+def adultos(edades):
+    contador = 0
+    for edad in edades:
+        if edad >= 18:
+            contador += 1
+    return contador
+
+# Bloque principal
+edades = []
+
+# Solicitar al usuario que ingrese al menos 3 edades
+while len(edades) < 3:
+    try:
+        edad = int(input(f"Ingrese la edad {len(edades) + 1}: "))
+        edades.append(edad)
+    except ValueError:
+        print("Por favor, ingrese un número entero válido.")
+
+# Contar cuántas personas son mayores de 18
+cantidad_adultos = adultos(edades)
+
+# Imprimir el resultado
+print(f"La cantidad de personas con edad igual o superior a 18 es: {cantidad_adultos}")
+
+
+
