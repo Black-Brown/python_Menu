@@ -266,14 +266,24 @@ contar_vocales('ITLA')
 #fin de la parte de Ronny
 
 #------------------------------------------------------------------------------------
+#Realizar un programa con dos funciones. La primera debe solicitar la carga de un
+#valor entero y mostrar el cuadrado de dicho valor.
+
 def numalcuadradro (num):
     resultado = print(input(num ** 2)) 
     return resultado 
 #------------------------------------------------------------------------------------
+#La segunda que solicite la carga
+#de dos valores y muestre el producto de los mismos.
+
 def numproducto (num1, num2):
     resultado = input(f"ingrese un numero:  {num1 * num2} ")
     return resultado
 #------------------------------------------------------------------------------------
+#Realizar un programa que tenga una función que reciba un string como parámetro.
+#Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3
+#veces desde el bloque principal, con 3 strings diferentes.
+
 def contar_vocales(cadena):
     vocales = "aeiouAEIOU"
     contador = 0
@@ -287,6 +297,9 @@ for i in range(3):
     cantidad_vocales = contar_vocales(cadena)
     print(f"La cantidad de vocales en '{cadena}' es: {cantidad_vocales}")
 #------------------------------------------------------------------------------------
+#Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
+#una con valores negativos y otra con los valores positivos e imprimir ambas listas.
+
 def negativos_positivos(valores):
     negativos = []
     positivos = []
@@ -333,6 +346,8 @@ cantidad_adultos = adultos(edades)
 
 # Imprimir el resultado
 print(f"La cantidad de personas con edad igual o superior a 18 es: {cantidad_adultos}")
+
+#fin de la parte de ricardo alexander
 #------------------------------------------------------------------------------------
 
 
