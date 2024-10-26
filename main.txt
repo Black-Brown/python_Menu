@@ -67,3 +67,20 @@ CICLO FOR
 
 10. Desarrollar un programa que solicite la carga de 10 números e imprima la suma de
 los últimos 5 valores ingresados.
+
+ejercicios con funciones 
+
+11. Realizar un programa con dos funciones. La primera debe solicitar la carga de unmvalor entero y mostrar el cuadrado de dicho valor.
+
+12. La segunda que solicite la carga
+#de dos valores y muestre el producto de los mismos.
+
+13. Realizar un programa que tenga una función que reciba un string como parámetro. Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3 veces desde el bloque principal, con 3 strings diferentes.
+
+14. Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
+#una con valores negativos y otra con los valores positivos e imprimir ambas listas.
+
+
+
+
+
