@@ -3,7 +3,7 @@ def menu():
     print(
     "Ejercicios POO:\n"
         "1. Ejercicio Personas\n"
-        "2. Clase Cuenta\n"
+        "2. Ejercicio Cuenta\n"
         "3. Clase Fracción\n"
         "4. Clase Complejo\n"
         "5. Cliente y Banco\n"
@@ -38,7 +38,7 @@ def menu():
     return choice
 
 def ejercicio_persona():
-
+    print("\n--- Ejercicio Persona ---")
     class persnona:
         def __init__(self, nombre, apellido, edad, estadoCivil, numeroDocumentoIdentidad):
             self.nombre = nombre
@@ -102,6 +102,24 @@ def ejercicio_persona():
     persona7.establecer_estadoCivil(True)
     print(f"la seniorita {persona7.nombre} es casada: {persona7.obtener_estadoCivil()}")
     print("")
+
+def ejecicio_cuenta():
+    print("\n--- Ejercicio Cuenta ---")
+
+    class Cuenta:
+        def __init__(self, saldo):
+            self.saldo = saldo
+                
+        def ingresar(self, monto):
+            if monto > 0:
+                self.saldo += monto
+                print(f"ingreso realizado. Nuevo saldo es: {self.saldo}")
+            else:
+                print(f"el monto debe ser positivo para realizar el ingreso")
+
+        def mostrar(self):
+            return self.mostrar    
+
 
 
 def main():
