@@ -39,4 +39,23 @@ la información. La clase PlazoFijo tendrá dos atributos propios, plazo e
 interés. Tendrá un método para obtener el importe del interés 
 (cantidad*interés/100) y otro método para mostrar la información, datos 
 del titular plazo, interés y total de interés. Crear al menos un objeto de 
-cada subclase." has esto ejercicios
+cada subclase." has esto ejercicios.
+
+CICLO WHILE
+
+7. Escribir un programa que solicite ingresar la nota de 10 alumnos, el
+programa debe informar de cuantos han aprobado y cuantos han
+suspendido.
+
+8. En una empresa trabajan n empleados cuyos sueldos oscilan entre 100 y
+1000. Realizar un programa que informe de cuantos empleados cobran
+menos de 500 y cuantos más de 500. Informar también del total que
+gasta la empresa en pagar a sus empleados.
+
+9. Escribir un programa que solicite ingresar la nota de 10 alumnos, el programa debe
+informar de cuantos han aprobado y cuantos han suspendido.
+
+CICLO FOR
+
+10. Desarrollar un programa que solicite la carga de 10 números e imprima la suma de
+los últimos 5 valores ingresados.
