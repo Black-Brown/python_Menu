@@ -116,9 +116,24 @@ def ejecicio_cuenta():
                 print(f"ingreso realizado. Nuevo saldo es: {self.saldo}")
             else:
                 print(f"el monto debe ser positivo para realizar el ingreso")
+        
+        def reintegro(self, monto):
+            if monto > 0 and monto <= self.saldo:
+                self.saldo -= monto
+                print(f"reintegro realizado. Nuevo saldo es: {self.saldo}")
+            else:
+                print(f"el monto es invalido para realizar el reintegro")
+        
+        def transferecias(self, otra_cuenta, monto):
+            if monto > 0 and monto <= self.saldo:
+                self.saldo -= monto
+                otra_cuenta.ingresar(monto)
+                print(f"transferencia realizada. Nuevo saldo: {self.saldo}")
+            else:
+                print("el monto es inválido para realizar la transferencia.")
 
         def mostrar(self):
-            return self.mostrar    
+            print(f"el monto")     
 
 
 
