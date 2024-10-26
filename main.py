@@ -1,38 +1,38 @@
 def menu():
     print("")
-    print("                                      === MENU PRINCIPAL ===")
+    print("---------------------------------------=== MENU PRINCIPAL ===---------------------------------------")
     print("")
     print(
     "Ejercicios POO:\n"
-        "1. Ejercicio Personas  | "
+        "1. Ejercicio Personas                           | "
         "2. Ejercicio Cuenta\n"
-        "3. Ejercicio Fraccion  | "
+        "3. Ejercicio Fraccion                           | "
         "4. Ejercicio Complejo\n"
-        "5. Cliente y Banco     | "
+        "5. Cliente y Banco                              | "
         "6. Clases Cuenta, Plazo Fijo y Caja Ahorro\n\n"
-    
+
     "Ciclo While:\n"
-        "7. Notas Alumnos\n"
+        "7. Notas Alumnos                                | "
         "8. Sueldos de Empleados\n"
         "9. Aprobados y Suspendidos de Alumnos\n\n"
     
     "Ciclo For:\n"
-        "10. Suma de Últimos 5 Números\n"
+        "10. Suma de Últimos 5 Números                   | "
         "11. Tabla de Multiplicar\n"
-        "12. Ingreso de Puntos en Cuadrantes\n"
+        "12. Ingreso de Puntos en Cuadrantes             | "
         "13. Clasificación de Triángulos\n\n"
     
     "Funciones:\n"
-        "14. Cuadrado y Producto de Números\n"
+        "14. Cuadrado y Producto de Números              | "
         "15. Conteo de Vocales en un String\n"
-        "16. Separación de Números Positivos y Negativos\n"
+        "16. Separación de Números Positivos y Negativos | "
         "17. Conteo de Personas Mayores de 18 Años\n\n"
     
     "Simples:\n"
         "18. Análisis de String\n\n"
     
     "Otros:\n"
-        "19. Validación de Nombres de Usuario\n"
+        "19. Validación de Nombres de Usuario            | "
         "20. Adivina el Número"
     )
     print("")
