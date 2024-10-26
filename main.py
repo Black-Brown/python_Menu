@@ -135,6 +135,11 @@ def main():
             break
         else:
             print("numero incorrecto")
+
+
+def Aprobados_y_Suspendidos_de_Alumnos():
+    print("\n--- Aprobados y Suspendidos de Alumnos ---")
+
 contador = 1
 aprobados = 0
 reprobados = 0
