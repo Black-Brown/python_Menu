@@ -132,11 +132,12 @@ if 1 <= num <= 10: #num debe estar entre 1 y 10
 else:
     print("Todo numero multiplicado por 0 =  0")
 
+#-------------------------------------------------------------------------------------
 #Realizar un programa que pida ingresar dos datos enteros (coordenadas x e y). Al 
 # comenzar el programa se pedirá ingresar el total de puntos a procesar. Informar de 
 # cuantos puntos se han ingresado en cada uno de los cuatro cuadrantes.
 
-# Inicializamos contadores para cada cuadrante
+# Contadores para cada cuadrante
 cuadrante_1 = 0
 cuadrante_2 = 0
 cuadrante_3 = 0
@@ -166,7 +167,7 @@ print(f"Puntos en el cuadrante 2: {cuadrante_2}")
 print(f"Puntos en el cuadrante 3: {cuadrante_3}")
 print(f"Puntos en el cuadrante 4: {cuadrante_4}")
 
-
+#-------------------------------------------------------------------------------------
 # Realizar un programa que pida ingresar dos datos enteros (coordenadas x e y). Al 
 # comenzar el programa se pedirá ingresar el total de puntos a procesar. Informar de 
 # cuantos puntos se han ingresado en cada uno de los cuatro cuadrantes.
@@ -219,7 +220,7 @@ def princip():
 
 princip()
 
-
+#-------------------------------------------------------------------------------------
 #Funciones 
 # Realizar un programa con dos funciones. La primera debe solicitar la carga de un 
 # valor entero y mostrar el cuadrado de dicho valor. La segunda que solicite la carga 
@@ -242,6 +243,7 @@ def producto():
 cuadrado()
 producto()
 
+#-------------------------------------------------------------------------------------
 # Realizar un programa que tenga una función que reciba un string como parámetro. 
 # Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3 
 # veces desde el bloque principal, con 3 strings diferentes. 
@@ -262,9 +264,6 @@ contar_vocales('0')
 contar_vocales('Ronny')
 contar_vocales('ITLA')  
 #fin de la parte de Ronny
-
-
-
 
 #------------------------------------------------------------------------------------
 def numalcuadradro (num):
