@@ -732,29 +732,13 @@ contar_vocales('Ronny')
 contar_vocales('ITLA')
 
 #Fin ejercicios de Ronny
+#--------------------------------------------------------------------------------------------
 
-def numalcuadradro (num):
-    print("\n--- Separación de Números Positivos y Negativos ---")
-    print("")
+#Ejercicios de Ricardo Alexander
+#2024-0244
 
-#Realizar un programa con dos funciones. La primera debe solicitar la carga de un
-#valor entero y mostrar el cuadrado de dicho valor.
-
-    resultado = print(input(num ** 2)) 
-    return resultado 
-
-def numproducto (num1, num2):
-    #La segunda que solicite la carga
-    #de dos valores y muestre el producto de los mismos.
-    resultado = input(f"ingrese un numero:  {num1 * num2} ")
-    return resultado
-
-def conteo_18():
-    print("\n--- Conteo de Personas Mayores de 18 Años ---")
-    print("")
-
-    #Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
-    #una con valores negativos y otra con los valores positivos e imprimir ambas listas.
+#Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
+#una con valores negativos y otra con los valores positivos e imprimir ambas listas.
 
     def negativos_positivos(valores):
         negativos = []
@@ -776,9 +760,12 @@ def conteo_18():
     # Imprimir resultados
     print("Lista de valores negativos:", negativos)
     print("Lista de valores positivos:", positivos)
+#---------------------------------------------------------------------------------------------
 
-    #La segunda que solicite la carga
-    #de dos valores y muestre el producto de los mismos.
+#Realizar un programa que reciba una serie de edades y retorne la cantidad de
+#personas con una edad igual o superior a 18 (como mínimo deben introducirse 3
+#valores enteros)
+
     def adultos(edades):
         contador = 0
         for edad in edades:
@@ -802,6 +789,103 @@ def conteo_18():
 
     # Imprimir el resultado
     print(f"La cantidad de personas con edad igual o superior a 18 es: {cantidad_adultos}")
+#-----------------------------------------------------------------------------------------------
+#Solicitar la carga por teclado de un string. Mostrar el total de caracteres del string y
+#utilizar las funciones explicadas anteriormente (upper, lower y capitalize).
+
+def obtener_total_caracteres(texto):
+    return len(texto)
+
+def convertir_mayusculas(texto):
+    return texto.upper()
+
+def convertir_minusculas(texto):
+    return texto.lower()
+
+def capitalizar_texto(texto):
+    return texto.capitalize()
+
+def procesar_texto():
+    # Solicita la entrada de un string por teclado
+    texto = input("Introduce un texto: ")
+    
+    # Llama a las funciones y muestra los resultados
+    print(f"Total de caracteres: {obtener_total_caracteres(texto)}")
+    print(f"Texto en mayúsculas: {convertir_mayusculas(texto)}")
+    print(f"Texto en minúsculas: {convertir_minusculas(texto)}")
+    print(f"Texto capitalizado: {capitalizar_texto(texto)}")
+
+# Ejecuta la función principal
+procesar_texto()
+#-----------------------------------------------------------------------------------------------
+
+"""
+Crear un módulo para validación de nombres de usuarios. Dicho módulo, deberá
+cumplir con los siguientes criterios de aceptación:
+El nombre de usuario debe contener un mínimo de 6 caracteres y un máximo de 12.
+El nombre de usuario debe ser alfanumérico.
+Nombre de usuario con menos de 6 caracteres, retorna el mensaje "El
+nombre de usuario debe contener al menos 6 caracteres".
+Nombre de usuario con más de 12 caracteres, retorna el mensaje "El nombre
+de usuario no puede contener más de 12 caracteres".
+Nombre de usuario con caracteres distintos a los alfanuméricos, retorna el
+mensaje "El nombre de usuario puede contener solo letras y números".
+Nombre de usuario válido, retorna True.
+"""
+
+def validar_usuario(nombre_usuario):
+    # Verificar la longitud del nombre de usuario
+    if len(nombre_usuario) < 6:
+        return "El nombre de usuario debe contener al menos 6 caracteres."
+    elif len(nombre_usuario) > 12:
+        return "El nombre de usuario no puede contener más de 12 caracteres."
+    
+    # Verificar si el nombre de usuario es alfanumérico
+    if not nombre_usuario.isalnum():
+        return "El nombre de usuario puede contener solo letras y números."
+    
+    # Si todas las validaciones pasan
+    return True
+
+
+# Bucle para pedir un nombre de usuario hasta que sea válido
+while True:
+    nombre = input("Introduce un nombre de usuario: ")
+    resultado = validar_usuario(nombre)
+
+    if resultado is True:
+        print("Nombre de usuario válido.")
+        break  # Salir del bucle si el nombre es válido
+    else:
+        print(resultado)  # Imprimir el mensaje de error
+#-----------------------------------------------------------------
+#Escribe un programa que almacene un número y pida al usuario
+#adivinarlo.
+
+import random
+
+def adivinar_numero():
+    # Almacenar un número aleatorio entre 1 y 50
+    numero_secreto = random.randint(1, 50)
+    intentos = 0
+    
+    print("He elegido un número entre 1 y 50. ¡Intenta adivinarlo!")
+    
+    while True:
+        intento = int(input("Introduce tu número: "))
+        intentos += 1
+        
+        if intento < numero_secreto:
+            print("Demasiado bajo. Intenta de nuevo.")
+        elif intento > numero_secreto:
+            print("Demasiado alto. Intenta de nuevo.")
+        else:
+            print(f"¡Felicidades! Adivinaste el número {numero_secreto} en {intentos} intentos.")
+            break
+
+# Llamar a la función
+adivinar_numero()
+#-----------------------------------------------------------------
 
 
 def main():
@@ -885,13 +969,29 @@ def main():
 
         elif choice == "16":
             print("")
-            numalcuadradro()
+            negativos_positivos()
             input("\nPresiona Enter para volver al menú...")
 
         elif choice == "17":
             print("")
-            conteo_18()
+            adultos()
             input("\nPresiona Enter para volver al menú...")
+
+         elif choice == "18":
+            print("")
+            obtener_total_caracteres()
+            input("\nPresiona Enter para volver al menú...")
+
+         elif choice == "19":
+            print("")
+            validar_usuario()
+            input("\nPresiona Enter para volver al menú...")
+
+           elif choice == "20":
+            print("")
+            adivinar_numero()
+            input("\nPresiona Enter para volver al menú...")
+
 
         elif choice == "0":
             print("saliendo del programa")
