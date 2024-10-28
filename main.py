@@ -206,7 +206,7 @@ def ejercicio_fraccion():
             self.numerador = numerador
             self.denominador = denominador
             self.simplificar()
-         
+        
         def simplificar(self):
             divisor_comun = gcd(self.numerador, self.denominador)
             self.numerador //= divisor_comun
@@ -449,20 +449,20 @@ def notas_alumnos():
         print(f'El promedio del estudiante {contador} es de {promedio}')
 
 
-    if promedio >= 90:
-        print('El promedio fue excelente')
-        aprobados += 1
-    elif promedio >= 80:
-        print('El promedio fue bueno')
-        aprobados += 1
-    elif promedio >= 70:
-        print('El promedio es más o menos')
-        aprobados += 1
-    else:
-        print('Reprobado')
-        reprobados += 1
+        if promedio >= 90:
+            print('El promedio fue excelente')
+            aprobados += 1
+        elif promedio >= 80:
+            print('El promedio fue bueno')
+            aprobados += 1
+        elif promedio >= 70:
+            print('El promedio es más o menos')
+            aprobados += 1
+        else:
+            print('Reprobado')
+            reprobados += 1
 
-    contador += 1
+        contador += 1
 
     print(f'\nTotal de estudiantes aprobados: {aprobados}')
     print(f'Total de estudiantes reprobados: {reprobados}')    
@@ -476,11 +476,9 @@ def sueldo_empleados():
     meno = 0
     contador = 1
     total_sueldos = 0
-    fuera_rango = 0
-
 
     while contador <= 5:
-        n = int(input(f'Ingrese el sueldo del empleado {contador} : '))
+        n = int(input(f'Ingrese el sueldo del empleado {contador}: '))
 
         if 100 <= n <= 1000:
             if n >= 500:
@@ -489,15 +487,16 @@ def sueldo_empleados():
             else:
                 print('Ganas menos de 500')
                 meno += 1
+
             total_sueldos += n
-            
+            contador += 1 
         else:
-            print('El sueldo que ingresó no está entre el rango de 100 y 1000')
-            contador += 1
+            print('El sueldo que ingresó no está entre el rango de 100 y 1000. Intente de nuevo.')
 
     print(f'\nEl total de empleados que ganan más de 500 son: {gana}')
     print(f'El total de empleados que ganan menos de 500 son: {meno}')
-    print(f'El sueldo total que gasta la empresa es de: {total_sueldos}')  
+    print(f'El sueldo total que gasta la empresa es de: {total_sueldos}')
+
 
 def aprobado_suspendido_alumno():
     print("\n--- Aprobados y Suspendidos de Alumnos ---")
@@ -506,6 +505,7 @@ def aprobado_suspendido_alumno():
     contador = 1
     aprobados = 0
     reprobados = 0
+
 
     while contador <= 10:
         print(f'\nIngrese las notas del estudiante {contador}:')
@@ -537,7 +537,7 @@ def aprobado_suspendido_alumno():
         contador += 1
 
     print(f'\nTotal de estudiantes aprobados: {aprobados}')
-    print(f'Total de estudiantes reprobados: {reprobados}')     
+    print(f'Total de estudiantes reprobados: {reprobados}')    
 
 """------------------------- CICLO FOR --------------------------"""
 
@@ -891,7 +891,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
