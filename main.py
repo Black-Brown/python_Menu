@@ -740,33 +740,31 @@ contar_vocales('ITLA')
 #Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
 #una con valores negativos y otra con los valores positivos e imprimir ambas listas.
 
-    def negativos_positivos(valores):
-        negativos = []
-        positivos = []
+def negativos_positivos(valores):
+    negativos = []
+    positivos = []
         
-        for valor in valores:
-            if valor < 0:
-                negativos.append(valor)
-            elif valor > 0:
-                positivos.append(valor)
+    for valor in valores:
+        if valor < 0:
+            negativos.append(valor)
+        elif valor > 0:
+            positivos.append(valor)
         
-        return negativos, positivos
+    return negativos, positivos
 
-    valores = [-3, 7, 0, 2, -1, 5, -4]  
+valores = [-3, 7, 0, 2, -1, 5, -4]  
 
-    # Separar y obtener las listas
-    negativos, positivos = negativos_positivos(valores)
-
-    # Imprimir resultados
-    print("Lista de valores negativos:", negativos)
-    print("Lista de valores positivos:", positivos)
+# Separar y obtener las listas
+negativos, positivos = negativos_positivos(valores)
+print("Lista de valores negativos:", negativos)
+print("Lista de valores positivos:", positivos)
 #---------------------------------------------------------------------------------------------
 
 #Realizar un programa que reciba una serie de edades y retorne la cantidad de
 #personas con una edad igual o superior a 18 (como mínimo deben introducirse 3
 #valores enteros)
 
-   def adultos(edades):
+def adultos(edades):
     contador = 0
     for edad in edades:
         if edad >= 18:
@@ -784,6 +782,9 @@ while len(edades) < 3:
             print("La edad debe ser mayor a 0.")
     except ValueError:
         print("Por favor, ingrese un número entero válido.")
+
+# Imprimir la cantidad de personas con edad igual o superior a 18
+print(f"La cantidad de personas con edad igual o superior a 18 es: {adultos(edades)}")
 #-----------------------------------------------------------------------------------------------
 #Solicitar la carga por teclado de un string. Mostrar el total de caracteres del string y
 #utilizar las funciones explicadas anteriormente (upper, lower y capitalize).
@@ -861,6 +862,7 @@ while True:
 #-----------------------------------------------------------------
 #Escribe un programa que almacene un número y pida al usuario
 #adivinarlo.
+import random
 
 def adivinar_numero():
     numero_secreto = random.randint(1, 50)
