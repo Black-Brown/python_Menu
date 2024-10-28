@@ -555,14 +555,14 @@ def suma_numeros():
 
     print(f'La suma de los últimos 5 valores ingresados es: {suma_ultimos_5}')
 
+#Ejercicios hecho por Ronny 
+
+# Realizar un programa que solicite la carga de un valor entero del 1 al 10. Mostrar
+# después la tabla de multiplicar de dicho número.
+
 def tabla_multiplicar():
     print("\n--- Tabla de Multiplicar ---")
     print("")
-
-    #parte de Ronny
-    #Ejercicios de Ronny
-    #Ciclo For
-    #Tabla de multiplicar 1 al 12
 
     #Pedimos el numero
     num = int(input("Ingresa un valor del 1 al 10: "))
@@ -574,30 +574,31 @@ def tabla_multiplicar():
     else:
         print("Todo numero multiplicado por 0 =  0")
 
+tabla_multiplicar()
+
+# Realizar un programa que pida ingresar dos datos enteros (coordenadas x e y). Al
+# comenzar el programa se pedirá ingresar el total de puntos a procesar. Informar de
+# cuantos puntos se han ingresado en cada uno de los cuatro cuadrantes.
+
 def puntos_cuandrantes():
-    print("\n--- Ingreso de Puntos en Cuadrantes ---")
-    print("")
+    print("\n--- Ingreso de Puntos en Cuadrantes ---\n")
 
-    #-------------------------------------------------------------------------------------
-    #Realizar un programa que pida ingresar dos datos enteros (coordenadas x e y). Al 
-    # comenzar el programa se pedirá ingresar el total de puntos a procesar. Informar de 
-    # cuantos puntos se han ingresado en cada uno de los cuatro cuadrantes.
-
-    # Contadores para cada cuadrante
+    # Contadores para cada cuadrante y puntos sobre ejes
     cuadrante_1 = 0
     cuadrante_2 = 0
     cuadrante_3 = 0
     cuadrante_4 = 0
+    sobre_ejes = 0
 
     # Pedir al usuario el total de puntos a procesar
     puntos_totales = int(input("Ingresa el total de puntos a procesar: "))
 
-    # Se procesa cada punto
+    # Procesar cada punto
     for i in range(puntos_totales):
         coord_x = int(input(f"Ingrese la coordenada x del punto {i + 1}: "))
         coord_y = int(input(f"Ingrese la coordenada y del punto {i + 1}: "))
         
-        # Saber en qué cuadrante se encuentra el punto
+        # Determinar en qué cuadrante se encuentra el punto o si está sobre los ejes
         if coord_x > 0 and coord_y > 0:
             cuadrante_1 += 1
         elif coord_x < 0 and coord_y > 0:
@@ -606,23 +607,30 @@ def puntos_cuandrantes():
             cuadrante_3 += 1
         elif coord_x > 0 and coord_y < 0:
             cuadrante_4 += 1
+        else:
+            sobre_ejes += 1  # Punto está sobre los ejes
 
     # Resultados
-    print(f"Puntos en el cuadrante 1: {cuadrante_1}")
+    print(f"\nPuntos en el cuadrante 1: {cuadrante_1}")
     print(f"Puntos en el cuadrante 2: {cuadrante_2}")
     print(f"Puntos en el cuadrante 3: {cuadrante_3}")
     print(f"Puntos en el cuadrante 4: {cuadrante_4}")
+    print(f"Puntos sobre los ejes: {sobre_ejes}")
 
-def clasificaion_triangulo():
+# Llamar a la función
+puntos_cuandrantes()
+
+
+# Realizar un programa que lea los lados de n triángulos. Informar después de cada
+# triángulo si es equilátero (tres lados iguales), isósceles (dos lados iguales) o
+# escaleno (ningún lado igual). Informar después del total de triángulos de cada tipo.
+
+def clasificion():
     print("\n--- Clasificación de Triángulos ---")
     print("")
 
-    # Realizar un programa que lea los lados de n triángulos. Informar después de cada 
-    # triángulo si es equilátero (tres lados iguales), isósceles (dos lados iguales) o 
-    # escaleno (ningún lado igual). Informar después del total de triángulos de cada tipo.
-
-    # Función para clasificar el tipo de triángulo
-    def clasificar_triangulo(lado1, lado2, lado3):
+#Clasificacion
+def clasificar_triangulo(lado1, lado2, lado3):
         if lado1 == lado2 == lado3:
             return "equilátero"
         elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
@@ -630,96 +638,100 @@ def clasificaion_triangulo():
         else:
             return "escaleno"
 
-    # Función principal
-    def princip():
-        #números de triángulos
-        n = int(input("Ingrese la cantidad de triángulos a clasificar: "))
+# Función principal
+def princip():
+    #números de triángulos
+    n = int(input("Ingrese la cantidad de triángulos a clasificar: "))
         
-        # Contadores para cada tipo de triángulo
-        equilateros = 0
-        isosceles = 0
-        escalenos = 0
+    # Contadores para cada tipo de triángulo
+    equilateros = 0
+    isosceles = 0
+    escalenos = 0
 
-        # clasificaciion
-        for i in range(n):
-            print(f"\nTriángulo {i + 1}:")
-            lado1 = float(input("Ingrese el primer lado: "))
-            lado2 = float(input("Ingrese el segundo lado: "))
-            lado3 = float(input("Ingrese el tercer lado: "))
+    # clasificaciion
+    for i in range(n):
+        print(f"\nTriángulo {i + 1}:")
+        lado1 = float(input("Ingrese el primer lado: "))
+        lado2 = float(input("Ingrese el segundo lado: "))
+        lado3 = float(input("Ingrese el tercer lado: "))
             
-            tipo = clasificar_triangulo(lado1, lado2, lado3)
+        tipo = clasificar_triangulo(lado1, lado2, lado3)
             
             # Tipo de triangulo
-            print(f"El triángulo {i + 1} es {tipo}.")
+        print(f"El triángulo {i + 1} es {tipo}.")
             
             # Incrementar el contador de cada var
-            if tipo == "equilátero":
+        if tipo == "equilátero":
                 equilateros += 1
-            elif tipo == "isósceles":
+        elif tipo == "isósceles":
                 isosceles += 1
-            elif tipo == "escaleno":
-                escalenos += 1
+        elif tipo == "escaleno":
+            escalenos += 1
 
         # Totales
-        print("\nResumen:")
-        print(f"Total de triángulos equiláteros: {equilateros}")
-        print(f"Total de triángulos isósceles: {isosceles}")
-        print(f"Total de triángulos escalenos: {escalenos}")
+    print("\nResumen:")
+    print(f"Total de triángulos equiláteros: {equilateros}")
+    print(f"Total de triángulos isósceles: {isosceles}")
+    print(f"Total de triángulos escalenos: {escalenos}")
 
-    princip()
+clasificion()
+princip()
 
-"""------------------------- FUNCIONES --------------------------"""
+
+# Realizar un programa con dos funciones. La primera debe solicitar la carga de un 
+# valor entero y mostrar el cuadrado de dicho valor. La segunda que solicite la carga 
+# de dos valores y muestre el producto de los mismos. Deberán llamar a estas dos 
+# funciones desde el bloque principal (Fuera de toda función, como en el ejemplo 
+# realizado al principio de este tema).
 
 def cuadrado_producto_numero():
     print("\n--- Cuadrado y Producto de Números ---")
     print("")
 
-    #Funciones 
-    # Realizar un programa con dos funciones. La primera debe solicitar la carga de un 
-    # valor entero y mostrar el cuadrado de dicho valor. La segunda que solicite la carga 
-    # de dos valores y muestre el producto de los mismos. Deberán llamar a estas dos 
-    # funciones desde el bloque principal (Fuera de toda función, como en el ejemplo 
-    # realizado al principio de este tema).
+#Funcion para el primer numero al cuadrado
+def cuadrado():
+    num1 = int(input("Ingrese el primer numero: "))
+    result_cuadrado = num1**2
+    print( f" {num1}^2 = {result_cuadrado}")
 
+#Funcion para multiplicar los 2 numeros
+def producto():
+    num1 = int(input("Ingrese el primer numero: "))
+    num2 = int(input("Ingrese el segundo numero: "))
+    result_producto = num1 * num2
+    print (f"{num1} x {num2} = {result_producto}")
 
-    def cuadrado():
-        num1 = int(input("Ingrese el primer numero: "))
-        result_cuadrado = num1**2
-        print( f" {num1}^2 = {result_cuadrado}")
+#Llamado a las funciones
+cuadrado_producto_numero()
+cuadrado()
+producto()
 
-    def producto():
-        num1 = int(input("Ingrese el primer numero: "))
-        num2 = int(input("Ingrese el segundo numero: "))
-        result_producto = num1 * num2
-        print (f"{num1} x {num2} = {result_producto}")
-
-    cuadrado()
-    producto()
+# Realizar un programa que tenga una función que reciba un string como parámetro.
+# Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3
+# veces desde el bloque principal, con 3 strings diferentes.
 
 def conteo_vocales():
     print("\n--- Conteo de Vocales en un String ---")
     print("")
 
-    # Realizar un programa que tenga una función que reciba un string como parámetro. 
-    # Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3 
-    # veces desde el bloque principal, con 3 strings diferentes. 
-
-    def contar_vocales(texto):
-        try:
-            if not texto.isalpha(): #verificar si hay un numero en el texto
-                raise ValueError("El texto no debe contener numeros, ni caracteres especiales.")   #forzar manejo de error
+def contar_vocales(texto):
+    try:
+        if not texto.isalpha(): #verificar si hay un numero en el texto
+            raise ValueError("El texto no debe contener numeros, ni caracteres especiales.\n")   #forzar manejo de error
                 
-            vocales = 'aeiou'
-            cant_vocales = sum(1 for letra in texto.lower() if letra in vocales)    #se suma 1 a cant_vocales si en si en texto hay una vocal
-            print(f"{texto} tiene {cant_vocales} vocales")
+        vocales = 'aeiou'
+        cant_vocales = sum(1 for letra in texto.lower() if letra in vocales)    #se suma 1 a cant_vocales si en si en texto hay una vocal
+        print(f"{texto} tiene {cant_vocales} vocales")
                 
-        except ValueError as error:
-                print("¡Ha ocurrido un error!: ",error) #imprime el error
+    except ValueError as error:
+            print("¡Ha ocurrido un error!: ",error) #imprime el error
 
-    contar_vocales('0')
-    contar_vocales('Ronny')
-    contar_vocales('ITLA')  
-    #fin de la parte de Ronny
+conteo_vocales()
+contar_vocales('0')
+contar_vocales('Ronny')
+contar_vocales('ITLA')
+
+#Fin ejercicios de Ronny
 
 def numalcuadradro (num):
     print("\n--- Separación de Números Positivos y Negativos ---")
