@@ -766,29 +766,24 @@ contar_vocales('ITLA')
 #personas con una edad igual o superior a 18 (como mínimo deben introducirse 3
 #valores enteros)
 
-    def adultos(edades):
-        contador = 0
-        for edad in edades:
-            if edad >= 18:
-                contador += 1
-        return contador
+   def adultos(edades):
+    contador = 0
+    for edad in edades:
+        if edad >= 18:
+            contador += 1
+    return contador
 
-    # Bloque principal
-    edades = []
-
-    # Solicitar al usuario que ingrese al menos 3 edades
-    while len(edades) < 3:
-        try:
-            edad = int(input(f"Ingrese la edad {len(edades) + 1}: "))
+# Solicitar al usuario que ingrese al menos 3 edades mayores a cero
+edades = []
+while len(edades) < 3:
+    try:
+        edad = int(input(f"Ingrese la edad {len(edades) + 1} (mayor a 0): "))
+        if edad > 0:
             edades.append(edad)
-        except ValueError:
-            print("Por favor, ingrese un número entero válido.")
-
-    # Contar cuántas personas son mayores de 18
-    cantidad_adultos = adultos(edades)
-
-    # Imprimir el resultado
-    print(f"La cantidad de personas con edad igual o superior a 18 es: {cantidad_adultos}")
+        else:
+            print("La edad debe ser mayor a 0.")
+    except ValueError:
+        print("Por favor, ingrese un número entero válido.")
 #-----------------------------------------------------------------------------------------------
 #Solicitar la carga por teclado de un string. Mostrar el total de caracteres del string y
 #utilizar las funciones explicadas anteriormente (upper, lower y capitalize).
@@ -807,7 +802,12 @@ def capitalizar_texto(texto):
 
 def procesar_texto():
     # Solicita la entrada de un string por teclado
-    texto = input("Introduce un texto: ")
+    texto = input("Introduce un texto: ").strip()
+    
+    # Verifica si el texto está vacío
+    if not texto:
+        print("El texto ingresado está vacío. Inténtalo de nuevo.")
+        return
     
     # Llama a las funciones y muestra los resultados
     print(f"Total de caracteres: {obtener_total_caracteres(texto)}")
@@ -862,29 +862,26 @@ while True:
 #Escribe un programa que almacene un número y pida al usuario
 #adivinarlo.
 
-import random
-
 def adivinar_numero():
-    # Almacenar un número aleatorio entre 1 y 50
     numero_secreto = random.randint(1, 50)
     intentos = 0
     
     print("He elegido un número entre 1 y 50. ¡Intenta adivinarlo!")
     
     while True:
-        intento = int(input("Introduce tu número: "))
-        intentos += 1
-        
-        if intento < numero_secreto:
-            print("Demasiado bajo. Intenta de nuevo.")
-        elif intento > numero_secreto:
-            print("Demasiado alto. Intenta de nuevo.")
-        else:
-            print(f"¡Felicidades! Adivinaste el número {numero_secreto} en {intentos} intentos.")
-            break
-
-# Llamar a la función
-adivinar_numero()
+        try:
+            intento = int(input("Introduce tu número: "))
+            intentos += 1
+            
+            if intento < numero_secreto:
+                print("Demasiado bajo. Intenta de nuevo.")
+            elif intento > numero_secreto:
+                print("Demasiado alto. Intenta de nuevo.")
+            else:
+                print(f"¡Felicidades! Adivinaste el número {numero_secreto} en {intentos} intentos.")
+                break
+        except ValueError:
+            print("Por favor, introduce un número válido.")
 #-----------------------------------------------------------------
 
 
