@@ -976,17 +976,21 @@ def main():
             adultos()
             input("\nPresiona Enter para volver al menú...")
 
-         elif choice == "18":
+        elif choice == "18":
             print("")
             obtener_total_caracteres()
+            convertir_mayusculas()
+            convertir_minusculas()
+            capitalizar_texto()
+            procesar_texto()
             input("\nPresiona Enter para volver al menú...")
 
-         elif choice == "19":
+        elif choice == "19":
             print("")
             validar_usuario()
             input("\nPresiona Enter para volver al menú...")
 
-           elif choice == "20":
+        elif choice == "20":
             print("")
             adivinar_numero()
             input("\nPresiona Enter para volver al menú...")
