@@ -1028,10 +1028,6 @@ def main():
 
         elif choice == "18":
             print("")
-            obtener_total_caracteres()
-            convertir_mayusculas()
-            convertir_minusculas()
-            capitalizar_texto()
             procesar_texto()
             input("\nPresiona Enter para volver al menú...")
 
