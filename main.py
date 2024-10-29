@@ -1003,7 +1003,7 @@ def main():
 
         elif choice == "13":
             print("")
-            clasificaion_triangulo()
+            clasificar_triangulo()
             input("\nPresiona Enter para volver al menú...")
         #------------------------- FUNCIONES --------------------------
         elif choice == "14":
