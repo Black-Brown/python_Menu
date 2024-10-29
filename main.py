@@ -799,11 +799,22 @@ def adultos(edades):
             contador += 1
     return contador
 
-# Solicitar al usuario que ingrese al menos 3 edades mayores a cero
+# Inicializar la lista de edades
 edades = []
-while len(edades) < 3:
+
+# Solicitar al usuario que ingrese edades mayores a cero
+print("Ingrese las edades. Escriba 'fin' para terminar.")
+while True:
+    entrada = input(f"Ingrese la edad #{len(edades) + 1} (o 'fin' para terminar): ")
+    
+    if entrada.lower() == 'fin':
+        if len(edades) < 3:  # Verifica que haya al menos 3 edades
+            print("Se requieren al menos 3 edades. Intente nuevamente.")
+            continue
+        break
+
     try:
-        edad = int(input(f"Ingrese la edad {len(edades) + 1} (mayor a 0): "))
+        edad = int(entrada)  # Convertir la entrada en un entero
         if edad > 0:
             edades.append(edad)
         else:
