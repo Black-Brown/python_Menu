@@ -36,7 +36,7 @@ def menu():
         "20. Adivina el Número"
     )
     print("")
-    choice = input("Elige una opcion (1-20). Para salir (0): ")
+    choice = int(input("Elige una opcion (1-20). Para salir (0): "))
     print("")
     return choice
 
@@ -423,8 +423,8 @@ def clase_cuenta():
 
     caja_ahorro.mostrar_informacion()
     plazo_fijo.mostrar_informacion()
-
-"""------------------------- CICLO WHILE --------------------------"""
+    
+    """------------------------- CICLO WHILE --------------------------"""
 
 def notas_alumnos():
     print("\n--- Notas Alumnos ---")
@@ -554,27 +554,25 @@ def suma_numeros():
             suma_ultimos_5 += numero
 
     print(f'La suma de los últimos 5 valores ingresados es: {suma_ultimos_5}')
+    
+     #Ejercicios de Ronny:
 
-#Ejercicios hecho por Ronny 
-
-# Realizar un programa que solicite la carga de un valor entero del 1 al 10. Mostrar
-# después la tabla de multiplicar de dicho número.
-
+        # Realizar un programa que solicite la carga de un valor entero del 1 al 10. Mostrar
+        # después la tabla de multiplicar de dicho número.
 def tabla_multiplicar():
-    print("\n--- Tabla de Multiplicar ---")
+    print("\n--- Tabla de Multiplicar ---"),
     print("")
 
-    #Pedimos el numero
+#Pedimos el numero
     num = int(input("Ingresa un valor del 1 al 10: "))
 
-    #Bucle para multiplicar el numero ingresado por la tabla
+#Bucle para multiplicar el numero ingresado por la tabla
     if 1 <= num <= 10: #num debe estar entre 1 y 10
         for i in range(1,12):
             print(f"{num} x {i} = {num * i}")
-    else:
-        print("Todo numero multiplicado por 0 =  0")
+        else:
+            print("El número debe estar entre 1 y 10.")
 
-tabla_multiplicar()
 
 # Realizar un programa que pida ingresar dos datos enteros (coordenadas x e y). Al
 # comenzar el programa se pedirá ingresar el total de puntos a procesar. Informar de
@@ -583,99 +581,90 @@ tabla_multiplicar()
 def puntos_cuandrantes():
     print("\n--- Ingreso de Puntos en Cuadrantes ---\n")
 
-    # Contadores para cada cuadrante y puntos sobre ejes
+ # Contadores para cada cuadrante y puntos sobre ejes
     cuadrante_1 = 0
     cuadrante_2 = 0
     cuadrante_3 = 0
     cuadrante_4 = 0
     sobre_ejes = 0
-
-    # Pedir al usuario el total de puntos a procesar
+# Pedir al usuario el total de puntos a procesar
     puntos_totales = int(input("Ingresa el total de puntos a procesar: "))
 
-    # Procesar cada punto
+            # Procesar cada punto
     for i in range(puntos_totales):
         coord_x = int(input(f"Ingrese la coordenada x del punto {i + 1}: "))
         coord_y = int(input(f"Ingrese la coordenada y del punto {i + 1}: "))
-        
-        # Determinar en qué cuadrante se encuentra el punto o si está sobre los ejes
+# Determinar en qué cuadrante se encuentra el punto o si está sobre los ejes
         if coord_x > 0 and coord_y > 0:
-            cuadrante_1 += 1
+                    cuadrante_1 += 1
         elif coord_x < 0 and coord_y > 0:
-            cuadrante_2 += 1
+                    cuadrante_2 += 1
         elif coord_x < 0 and coord_y < 0:
-            cuadrante_3 += 1
+                    cuadrante_3 += 1
         elif coord_x > 0 and coord_y < 0:
-            cuadrante_4 += 1
+                    cuadrante_4 += 1
         else:
             sobre_ejes += 1  # Punto está sobre los ejes
 
-    # Resultados
-    print(f"\nPuntos en el cuadrante 1: {cuadrante_1}")
-    print(f"Puntos en el cuadrante 2: {cuadrante_2}")
-    print(f"Puntos en el cuadrante 3: {cuadrante_3}")
-    print(f"Puntos en el cuadrante 4: {cuadrante_4}")
-    print(f"Puntos sobre los ejes: {sobre_ejes}")
+        # Resultados
+        print(f"\nPuntos en el cuadrante 1: {cuadrante_1}")
+        print(f"Puntos en el cuadrante 2: {cuadrante_2}")
+        print(f"Puntos en el cuadrante 3: {cuadrante_3}")
+        print(f"Puntos en el cuadrante 4: {cuadrante_4}")
+        print(f"Puntos sobre los ejes: {sobre_ejes}")
 
-# Llamar a la función
-puntos_cuandrantes()
 
 
 # Realizar un programa que lea los lados de n triángulos. Informar después de cada
 # triángulo si es equilátero (tres lados iguales), isósceles (dos lados iguales) o
 # escaleno (ningún lado igual). Informar después del total de triángulos de cada tipo.
 
-def clasificion():
-    print("\n--- Clasificación de Triángulos ---")
-    print("")
-
-#Clasificacion
 def clasificar_triangulo(lado1, lado2, lado3):
-        if lado1 == lado2 == lado3:
-            return "equilátero"
-        elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
-            return "isósceles"
-        else:
-            return "escaleno"
-
+    if lado1 == lado2 == lado3:
+        return "equilátero"
+    elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
+        return "isósceles"
+    else:
+        return "escaleno"
+ 
 # Función principal
-def princip():
-    #números de triángulos
+def principal():
+    print("\n--- Clasificación de Triángulos ---")
+   
+    # Número de triángulos
     n = int(input("Ingrese la cantidad de triángulos a clasificar: "))
-        
+   
     # Contadores para cada tipo de triángulo
     equilateros = 0
     isosceles = 0
     escalenos = 0
-
-    # clasificaciion
+ 
+    # Clasificación
     for i in range(n):
         print(f"\nTriángulo {i + 1}:")
         lado1 = float(input("Ingrese el primer lado: "))
         lado2 = float(input("Ingrese el segundo lado: "))
         lado3 = float(input("Ingrese el tercer lado: "))
-            
+ 
+        # Clasificar el triángulo
         tipo = clasificar_triangulo(lado1, lado2, lado3)
-            
-            # Tipo de triangulo
+       
+        # Imprimir tipo de triángulo
         print(f"El triángulo {i + 1} es {tipo}.")
-            
-            # Incrementar el contador de cada var
+       
+        # Incrementar el contador según el tipo de triángulo
         if tipo == "equilátero":
-                equilateros += 1
+            equilateros += 1
         elif tipo == "isósceles":
-                isosceles += 1
+            isosceles += 1
         elif tipo == "escaleno":
             escalenos += 1
-
-        # Totales
+ 
+    # Mostrar el resumen
     print("\nResumen:")
     print(f"Total de triángulos equiláteros: {equilateros}")
     print(f"Total de triángulos isósceles: {isosceles}")
     print(f"Total de triángulos escalenos: {escalenos}")
-
-clasificion()
-princip()
 
 
 # Realizar un programa con dos funciones. La primera debe solicitar la carga de un 
@@ -701,10 +690,6 @@ def producto():
     result_producto = num1 * num2
     print (f"{num1} x {num2} = {result_producto}")
 
-#Llamado a las funciones
-cuadrado_producto_numero()
-cuadrado()
-producto()
 
 # Realizar un programa que tenga una función que reciba un string como parámetro.
 # Debe mostrar la cantidad de vocales que tiene dicho string. Se deberá llamar 3
@@ -725,29 +710,14 @@ def contar_vocales(texto):
                 
     except ValueError as error:
             print("¡Ha ocurrido un error!: ",error) #imprime el error
-
-conteo_vocales()
-contar_vocales('0')
-contar_vocales('Ronny')
-contar_vocales('ITLA')
-
-#Fin ejercicios de Ronny
-#--------------------------------------------------------------------------------------------
-
-#Ejercicios de Ricardo Alexander
-#2024-0244
-
-#Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
-#una con valores negativos y otra con los valores positivos e imprimir ambas listas.
-
+            
 def positivos_negativos():
     negativos = []  # Lista para números negativos
     positivos = []  # Lista para números positivos y ceros
 
-    print("Introduce números enteros uno por uno. Escribe 'fin' para terminar.")
-    print("Ejemplo: -3, 2, 0, fin")
-
     while True:
+        print("Introduce números enteros uno por uno. Escribe 'fin' para terminar.")
+        
         valor_input = input("Introduce un número: ")
         
         # Termina el bucle si el usuario escribe "fin"
@@ -775,60 +745,50 @@ def positivos_negativos():
     print(negativos)
     print("Lista de números positivos y ceros ordenados de menor a mayor:")
     print(positivos)
-
-# Ejecutar la función
-positivos_negativos()
-
-
-#para llamar al menu y elegir la opcion:
-choice = menu()
-if choice == 16:
-    positivos_negativos()
-
-
 #---------------------------------------------------------------------------------------------
 
 #Realizar un programa que reciba una serie de edades y retorne la cantidad de
 #personas con una edad igual o superior a 18 (como mínimo deben introducirse 3
 #valores enteros)
 
-def adultos(edades):
+def contar_adultos(edades):
+    """Cuenta cuántas edades son iguales o mayores a 18."""
     contador = 0
     for edad in edades:
         if edad >= 18:
             contador += 1
     return contador
 
-# Inicializar la lista de edades
-edades = []
+def ejecutar_adultos():
+    """Solicita al usuario que ingrese una serie de edades y cuenta las personas mayores o iguales a 18."""
+    edades = []
 
-# Solicitar al usuario que ingrese edades mayores a cero
-print("Ingrese las edades. Escriba 'fin' para terminar.")
-while True:
-    entrada = input(f"Ingrese la edad #{len(edades) + 1} (o 'fin' para terminar): ")
-    
-    if entrada.lower() == 'fin':
-        if len(edades) < 3:  # Verifica que haya al menos 3 edades
-            print("Se requieren al menos 3 edades. Intente nuevamente.")
-            continue
-        break
+    # Solicitar al usuario que ingrese edades mayores a cero
+    print("Ingrese las edades. Escriba 'fin' para terminar. Debe ingresar al menos 3 edades.")
 
-    try:
-        edad = int(entrada)  # Convertir la entrada en un entero
-        if edad > 0:
-            edades.append(edad)
-        else:
-            print("La edad debe ser mayor a 0.")
-    except ValueError:
-        print("Por favor, ingrese un número entero válido.")
+    while True:
+        entrada = input(f"Ingrese la edad #{len(edades) + 1} (o 'fin' para terminar): ")
+        
+        if entrada.lower() == 'fin':
+            if len(edades) < 3:
+                print("Se requieren al menos 3 edades. Intente nuevamente.")
+                continue
+            break
 
-# Imprimir la cantidad de personas con edad igual o superior a 18
-print(f"La cantidad de personas con edad igual o superior a 18 es: {adultos(edades)}")
+        try:
+            edad = int(entrada)  # Convertir la entrada en un entero
+            if edad > 0:
+                edades.append(edad)
+            else:
+                print("La edad debe ser mayor a 0.")
+        except ValueError:
+            print("Por favor, ingrese un número entero válido.")
 
-#para llamar al menu y elegir la opcion:
-choice = menu()
-if choice == 17:
-    adultos()
+    # Imprimir la cantidad de personas con edad igual o superior a 18
+    cantidad_adultos = contar_adultos(edades)
+    print(f"La cantidad de personas con edad igual o superior a 18 es: {cantidad_adultos}")
+
+
 #-----------------------------------------------------------------------------------------------
 #Solicitar la carga por teclado de un string. Mostrar el total de caracteres del string y
 #utilizar las funciones explicadas anteriormente (upper, lower y capitalize).
@@ -859,18 +819,6 @@ def procesar_texto():
     print(f"Texto en mayúsculas: {convertir_mayusculas(texto)}")
     print(f"Texto en minúsculas: {convertir_minusculas(texto)}")
     print(f"Texto capitalizado: {capitalizar_texto(texto)}")
-
-# Ejecuta la función principal
-procesar_texto()
-
-#para llamar al menu y elegir la opcion:
-choice = menu()
-if choice == 18:
-    obtener_total_caracteres()
-    convertir_mayusculas()
-    convertir_minusculas()
-    capitalizar_texto()
-    procesar_texto()
 #-----------------------------------------------------------------------------------------------
 
 """
@@ -901,21 +849,19 @@ def validar_usuario(nombre_usuario):
     # Si todas las validaciones pasan
     return True
 
+def ejecutar_usuario():
 
 # Bucle para pedir un nombre de usuario hasta que sea válido
-while True:
-    nombre = input("Introduce un nombre de usuario: ")
-    resultado = validar_usuario(nombre)
+    while True:
+        nombre = input("Introduce un nombre de usuario: ")
+        resultado = validar_usuario(nombre)
 
-    if resultado is True:
-        print("Nombre de usuario válido.")
-        break  # Salir del bucle si el nombre es válido
-    else:
-        print(resultado)  # Imprimir el mensaje de error
+        if resultado is True:
+            print("Nombre de usuario válido.")
+            break  # Salir del bucle si el nombre es válido
+        else:
+            print(resultado)  # Imprimir el mensaje de error
 
-choice = menu()
-if choice == 19:
-    validar_usuario()
 #-----------------------------------------------------------------
 #Escribe un programa que almacene un número y pida al usuario
 #adivinarlo.
@@ -942,127 +888,123 @@ def adivinar_numero():
         except ValueError:
             print("Por favor, introduce un número válido.")
 
-choice = menu()
-if choice == 20:
-    adivinar_numero()
-#-----------------------------------------------------------------
-
 
 def main():
     while True:
         choice = menu()
         #------------------------- POO --------------------------
-        if choice == "1":
+        if choice == 1:
             print("")
             ejercicio_persona()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "2":
+        elif choice == 2:
             print("")
             ejecicio_cuenta()
             input("\nPresiona Enter para volver al menú...")
         
-        elif choice == "3":
+        elif choice == 3:
             print("")
             ejercicio_fraccion()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "4":
+        elif choice == 4:
             print("")
             ejercicio_complejo()
             input("\nPresiona Enter para volver al menú...")
         
-        elif choice == "5":
+        elif choice == 5:
             print("")
             cliente_banco()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "6":
+        elif choice == 6:
             print("")
             clase_cuenta()
             input("\nPresiona Enter para volver al menú...")
-        #------------------------- CICLO WHILE --------------------------
-        elif choice == "7":
+            
+          #------------------------- CICLO WHILE --------------------------
+        elif choice == 7:
             print("")
             notas_alumnos()
             input("\nPresiona Enter para volver al menú...")
         
-        elif choice == "8":
+        elif choice == 8:
             print("")
             sueldo_empleados()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "9":
+        elif choice == 9:
             print("")
             aprobado_suspendido_alumno()
             input("\nPresiona Enter para volver al menú...")
         #------------------------- CICLO FOR --------------------------
-        elif choice == "10":
+        elif choice == 10:
             print("")
             suma_numeros()
-            input("\nPresiona Enter para volver al menú...")
-
-        elif choice == "11":
+            input("\nPresiona Enter para volver al menú...")   
+            
+        elif choice == 11:
             print("")
             tabla_multiplicar()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "12":
+        elif choice == 12:
             print("")
             puntos_cuandrantes()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "13":
+        elif choice == 13:
             print("")
-            clasificar_triangulo()
+            principal()
             input("\nPresiona Enter para volver al menú...")
         #------------------------- FUNCIONES --------------------------
-        elif choice == "14":
+        elif choice == 14:
             print("")
-            cuadrado_producto_numero()
+            cuadrado()
+            producto()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "15":
+        elif choice == 15:
             print("")
-            conteo_vocales()
+            contar_vocales('0')
+            contar_vocales('Ronny')
+            contar_vocales('ITLA')
             input("\nPresiona Enter para volver al menú...")
-
-        elif choice == "16":
+        
+        elif choice == 16:
             print("")
             positivos_negativos()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "17":
+        elif choice == 17:
             print("")
-            adultos()
+            ejecutar_adultos()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "18":
+        elif choice == 18:
             print("")
             procesar_texto()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "19":
+        elif choice == 19:
             print("")
-            validar_usuario()
+            ejecutar_usuario()
             input("\nPresiona Enter para volver al menú...")
 
-        elif choice == "20":
+        elif choice == 20:
             print("")
             adivinar_numero()
             input("\nPresiona Enter para volver al menú...")
-
-
-        elif choice == "0":
+            
+        elif choice == 0:
             print("saliendo del programa")
             break
         else:
             print("numero incorrecto")
 
+
         
 
 if __name__ == "__main__":
     main()
-
-
-
