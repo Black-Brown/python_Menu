@@ -1018,7 +1018,7 @@ def main():
 
         elif choice == "16":
             print("")
-            negativos_positivos()
+            positivos_negativos()
             input("\nPresiona Enter para volver al menú...")
 
         elif choice == "17":
