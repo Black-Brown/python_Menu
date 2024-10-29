@@ -740,12 +740,12 @@ contar_vocales('ITLA')
 #Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
 #una con valores negativos y otra con los valores positivos e imprimir ambas listas.
 
-def negativos_positivos():
-    negativos = []
-    positivos = []
-    ceros = []  # Lista para ceros
+def positivos_negativos():
+    negativos = []  # Lista para números negativos
+    positivos = []  # Lista para números positivos y ceros
 
-    print("Introduce números uno por uno. Escribe 'fin' para terminar.")
+    print("Introduce números enteros uno por uno. Escribe 'fin' para terminar.")
+    print("Ejemplo: -3, 2, 0, fin")
 
     while True:
         valor_input = input("Introduce un número: ")
@@ -755,24 +755,36 @@ def negativos_positivos():
             break
         
         try:
-            valor = float(valor_input.strip())  # Convertir la entrada en un flotante
+            valor = int(valor_input.strip())  # Convertir la entrada en un entero
+            
+            # Clasificar el número en negativo o positivo
             if valor < 0:
-                negativos.append(valor)  # Agrega a negativos si es menor que 0
-            elif valor > 0:
-                positivos.append(valor)  # Agrega a positivos si es mayor que 0
+                negativos.append(valor)  # Agregar a la lista de negativos
             else:
-                ceros.append(valor)  # Manejar el caso del cero
+                positivos.append(valor)  # Agregar a la lista de positivos y ceros
         except ValueError:
-            # Mensaje de error si no se puede convertir a flotante
-            print("Por favor, ingresa un número válido (puede ser entero o flotante).")
+            # Mensaje de error si no se puede convertir a entero
+            print("Por favor, ingresa un número entero válido.")
 
-    return negativos, positivos, ceros
+    # Ordenar ambas listas de menor a mayor
+    negativos.sort()  # Ordenar negativos
+    positivos.sort()  # Ordenar positivos y ceros
 
-# Separar y obtener las listas
-negativos, positivos, ceros = negativos_positivos()
-print("Lista de valores negativos:", negativos)
-print("Lista de valores positivos:", positivos)
-print("Lista de ceros:", ceros)
+    # Presentar resultados
+    print("\nLista de números negativos ordenados de menor a mayor:")
+    print(negativos)
+    print("Lista de números positivos y ceros ordenados de menor a mayor:")
+    print(positivos)
+
+# Ejecutar la función
+positivos_negativos()
+
+
+#para llamar al menu y elegir la opcion:
+choice = menu()
+if choice == 16:
+    positivos_negativos()
+
 
 #---------------------------------------------------------------------------------------------
 
@@ -801,6 +813,11 @@ while len(edades) < 3:
 
 # Imprimir la cantidad de personas con edad igual o superior a 18
 print(f"La cantidad de personas con edad igual o superior a 18 es: {adultos(edades)}")
+
+#para llamar al menu y elegir la opcion:
+choice = menu()
+if choice == 17:
+    adultos()
 #-----------------------------------------------------------------------------------------------
 #Solicitar la carga por teclado de un string. Mostrar el total de caracteres del string y
 #utilizar las funciones explicadas anteriormente (upper, lower y capitalize).
@@ -834,6 +851,15 @@ def procesar_texto():
 
 # Ejecuta la función principal
 procesar_texto()
+
+#para llamar al menu y elegir la opcion:
+choice = menu()
+if choice == 18:
+    obtener_total_caracteres()
+    convertir_mayusculas()
+    convertir_minusculas()
+    capitalizar_texto()
+    procesar_texto()
 #-----------------------------------------------------------------------------------------------
 
 """
@@ -875,6 +901,10 @@ while True:
         break  # Salir del bucle si el nombre es válido
     else:
         print(resultado)  # Imprimir el mensaje de error
+
+choice = menu()
+if choice == 19:
+    validar_usuario()
 #-----------------------------------------------------------------
 #Escribe un programa que almacene un número y pida al usuario
 #adivinarlo.
@@ -900,6 +930,10 @@ def adivinar_numero():
                 break
         except ValueError:
             print("Por favor, introduce un número válido.")
+
+choice = menu()
+if choice == 20:
+    adivinar_numero()
 #-----------------------------------------------------------------
 
 
