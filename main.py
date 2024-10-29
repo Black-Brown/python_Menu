@@ -740,24 +740,40 @@ contar_vocales('ITLA')
 #Realizar un programa que cargue una lista de n valores enteros. Generar dos listas,
 #una con valores negativos y otra con los valores positivos e imprimir ambas listas.
 
-def negativos_positivos(valores):
+def negativos_positivos():
     negativos = []
     positivos = []
-        
-    for valor in valores:
-        if valor < 0:
-            negativos.append(valor)
-        elif valor > 0:
-            positivos.append(valor)
-        
-    return negativos, positivos
+    ceros = []  # Lista para ceros
 
-valores = [-3, 7, 0, 2, -1, 5, -4]  
+    print("Introduce números uno por uno. Escribe 'fin' para terminar.")
+
+    while True:
+        valor_input = input("Introduce un número: ")
+        
+        # Termina el bucle si el usuario escribe "fin"
+        if valor_input.lower() == "fin":
+            break
+        
+        try:
+            valor = float(valor_input.strip())  # Convertir la entrada en un flotante
+            if valor < 0:
+                negativos.append(valor)  # Agrega a negativos si es menor que 0
+            elif valor > 0:
+                positivos.append(valor)  # Agrega a positivos si es mayor que 0
+            else:
+                ceros.append(valor)  # Manejar el caso del cero
+        except ValueError:
+            # Mensaje de error si no se puede convertir a flotante
+            print("Por favor, ingresa un número válido (puede ser entero o flotante).")
+
+    return negativos, positivos, ceros
 
 # Separar y obtener las listas
-negativos, positivos = negativos_positivos(valores)
+negativos, positivos, ceros = negativos_positivos()
 print("Lista de valores negativos:", negativos)
 print("Lista de valores positivos:", positivos)
+print("Lista de ceros:", ceros)
+
 #---------------------------------------------------------------------------------------------
 
 #Realizar un programa que reciba una serie de edades y retorne la cantidad de
